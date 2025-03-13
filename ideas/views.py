@@ -43,15 +43,24 @@ def delete_idea(request, idea_id):
         return redirect('idea_list')  # Prevent unauthorized deletion
 
 
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect
+from django.contrib import messages
+
 def signup(request):
-    if request.method == 'POST':
+    if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')  # Redirect to login page after signup
+            messages.success(request, "Account created successfully! You can now log in.")
+            return redirect("login")
+        else:
+            messages.error(request, "There was an error with your sign-up. Please check the form.")
     else:
         form = UserCreationForm()
-    return render(request, 'registration/signup.html', {'form': form})
+
+    return render(request, "signup.html", {"form": form})
+
 
 def idea_list(request):
     if request.user.is_authenticated:

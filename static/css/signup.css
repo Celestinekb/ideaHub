@@ -191,3 +191,36 @@ h2 {
         padding: 0.5rem;
     }
 }
+
+/* Error Messages */
+.alert {
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Error Styling */
+.alert-danger {
+    background: #ffdddd;
+    color: #b30000;
+    border: 1px solid #b30000;
+}
+
+.alert-danger ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.alert-danger li {
+    padding: 5px 0;
+}
+
+/* Success Message */
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
