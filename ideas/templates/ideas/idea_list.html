@@ -11,22 +11,30 @@
 {% block content %}
 <div class="container mt-4">
     <!-- User Profile Section -->
-    <div class="profile-container">
-        <div class="profile-info">
-            <!-- Profile Picture -->
-            <img src="/media/profile_pics/FB_IMG_1711797824316_p8iigxs.jpg?March 12, 2025, 11:58 p.m." 
-                 alt="Profile Picture" 
+    <!-- User Profile Section -->
+<div class="profile-container">
+    <div class="profile-info">
+        <!-- Profile Picture -->
+        {% if user.is_authenticated and user.profile.profile_picture %}
+            <img src="{{ user.profile.profile_picture.url }}" 
+                 alt="Profile Picture of {{ user.username }}" 
+                 class="profile-pic"
                  loading="lazy">
-                 
-            <!-- Username -->
-            <span class="username">celestinekb</span>
-        </div>
-    
-        <!-- Submit Button -->
-        <a href="/submit/" class="btn btn-submit">Submit a New Idea</a>
+        {% else %}
+            <img src="/static/images/default-profile.png" 
+                 alt="Default Profile Picture" 
+                 class="profile-pic"
+                 loading="lazy">
+        {% endif %}
+        
+        <!-- Username -->
+        <span class="username">{{ user.username }}</span>
     </div>
-    
-    
+
+    <!-- Submit Button -->
+    <a href="{% url 'submit_idea' %}" class="btn btn-submit">Submit a New Idea</a>
+</div>
+
 
     <!-- Research Ideas List -->
     <div class="idea-container">
