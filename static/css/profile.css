@@ -1,0 +1,203 @@
+/* profile.css */
+
+/* Profile Card */
+.card.shadow-lg {
+    border: none;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 2rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.card.shadow-lg:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Profile Picture */
+.rounded-circle {
+    object-fit: cover;
+    border-color: var(--primary-color) !important; /* From base.css */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover .rounded-circle {
+    transform: scale(1.05);
+    border-color: var(--info-color); /* Subtle shift on hover */
+}
+
+/* Typography */
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.text-muted {
+    font-size: 1rem;
+    color: var(--muted-text);
+}
+
+.lead {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin: 1rem 0;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Buttons */
+.btn-warning {
+    padding: 0.6rem 1.75rem;
+    font-size: 1rem;
+    border-radius: 25px; /* Pill-shaped */
+    background-color: #ffc107; /* Bootstrap warning */
+    border: 2px solid #ffc107;
+    color: var(--dark-color);
+    transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+    background-color: transparent;
+    color: #ffc107;
+    border-color: #ffc107;
+}
+
+.btn-primary {
+    padding: 0.6rem 1.75rem;
+    font-size: 1rem;
+    border-radius: 25px;
+    border: 2px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* User's Ideas Section */
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+    margin: 1.5rem 0;
+}
+
+/* Idea Cards */
+.card.shadow-sm {
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.shadow-sm:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: var(--muted-text);
+    margin-bottom: 1rem;
+}
+
+.card-body p strong {
+    color: var(--dark-color);
+    font-weight: 500;
+}
+
+/* Delete Button */
+.btn-danger {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    border: 2px solid var(--danger-color);
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: transparent;
+    color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
+/* Empty State */
+.text-center.text-muted {
+    font-size: 1.1rem;
+    padding: 2rem 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card.shadow-lg {
+        padding: 1.5rem;
+    }
+
+    .rounded-circle {
+        width: 120px !important;
+        height: 120px !important;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+
+    .col-md-6 {
+        width: 100%; /* Full width for idea cards */
+    }
+
+    .btn-warning, .btn-primary, .btn-danger {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    .card-body {
+        padding: 1.25rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .text-center.text-muted {
+        font-size: 1rem;
+    }
+}

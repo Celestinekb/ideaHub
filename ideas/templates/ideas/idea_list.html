@@ -1,0 +1,60 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Top Research Ideas{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/idea_list.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <!-- User Profile Section -->
+    <div class="profile-container">
+        <div class="profile-info">
+            <!-- Profile Picture -->
+            <img src="/media/profile_pics/FB_IMG_1711797824316_p8iigxs.jpg?March 12, 2025, 11:58 p.m." 
+                 alt="Profile Picture" 
+                 loading="lazy">
+                 
+            <!-- Username -->
+            <span class="username">celestinekb</span>
+        </div>
+    
+        <!-- Submit Button -->
+        <a href="/submit/" class="btn btn-submit">Submit a New Idea</a>
+    </div>
+    
+    
+
+    <!-- Research Ideas List -->
+    <div class="idea-container">
+        {% for idea in ideas %}
+            <div class="card shadow-sm fade-in idea-card mb-4">
+                <div class="card-body">
+                    <!-- Author's Profile -->
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="{{ idea.user.profile.profile_picture.url }}" 
+                             class="rounded-circle border border-2 border-dark me-2"
+                             width="40" height="40" alt="User Picture">
+                        <div>
+                            <p class="mb-0"><strong>{{ idea.user.username }}</strong></p>
+                        </div>
+                    </div>
+
+                    <!-- Idea Content -->
+                    <h5 class="card-title">{{ idea.title }}</h5>
+                    <p class="card-text text-muted">{{ idea.description }}</p>
+                    <p><strong>Votes:</strong> <span id="votes-{{ idea.id }}" class="vote-count">{{ idea.votes }}</span></p>
+                    
+                    <!-- Vote Button -->
+                    <button class="btn btn-primary vote-btn mt-2" data-id="{{ idea.id }}">Vote</button>
+                </div>
+            </div>
+        {% empty %}
+            <p class="text-center text-muted">No ideas yet. Be the first to submit one!</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

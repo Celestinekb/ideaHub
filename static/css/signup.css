@@ -1,0 +1,193 @@
+/* signup.css */
+
+/* Brand Colors (Copied from base.css for standalone use) */
+:root {
+    --primary-color: #007bff;    /* Blue */
+    --secondary-color: #6c757d;  /* Gray */
+    --success-color: #28a745;   /* Green */
+    --info-color: #17a2b8;     /* Cyan */
+    --danger-color: #dc3545;   /* Red */
+    --dark-color: #343a40;     /* Dark gray */
+    --light-color: #f8f9fa;    /* Light gray */
+    --text-color: #212529;     /* Dark text */
+    --muted-text: #6c757d;     /* Muted text */
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Signup Wrapper */
+.signup-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+/* Signup Container */
+.signup-container {
+    max-width: 450px;
+    width: 100%;
+    padding: 2.5rem;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.signup-container:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Brand Title */
+.brand-title {
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.brand-title:hover {
+    color: var(--info-color);
+}
+
+/* Signup Heading */
+h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--dark-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 1.75rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 2px solid var(--light-color);
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+/* Register Button */
+.btn-register {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: var(--success-color); /* Green for registration */
+    border: 2px solid var(--success-color);
+    border-radius: 25px; /* Pill-shaped */
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-register:hover {
+    background-color: transparent;
+    color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+/* Login Link */
+.login-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--muted-text);
+}
+
+.login-link a {
+    color: var(--primary-color);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: var(--info-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .signup-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .brand-title {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
+
+    .form-group input {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    .btn-register {
+        padding: 0.6rem 1.25rem;
+        font-size: 0.95rem;
+    }
+
+    .login-link {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .signup-container {
+        max-width: 100%;
+        margin: 0.5rem;
+    }
+
+    .signup-wrapper {
+        padding: 0.5rem;
+    }
+}

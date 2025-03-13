@@ -1,0 +1,228 @@
+/* base.css */
+
+/* Define brand colors */
+:root {
+    --primary-color: #007bff;    /* Blue - Matches Bootstrap's btn-primary */
+    --secondary-color: #6c757d;  /* Gray - Matches Bootstrap's btn-secondary */
+    --success-color: #28a745;   /* Green - Matches Bootstrap's btn-success */
+    --info-color: #17a2b8;     /* Cyan - Matches Bootstrap's btn-info */
+    --danger-color: #dc3545;   /* Red - Matches Bootstrap's btn-danger */
+    --dark-color: #343a40;     /* Dark gray - Matches Bootstrap's bg-dark */
+    --light-color: #f8f9fa;    /* Light gray - Matches Bootstrap's bg-light */
+    --text-color: #212529;     /* Dark text for readability */
+    --muted-text: #6c757d;     /* Muted text color */
+}
+
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-color);
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: var(--light-color);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: var(--info-color);
+}
+
+/* Buttons */
+.btn {
+    padding: 0.5rem 1.25rem;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: darken(var(--primary-color), 10%);
+    border-color: darken(var(--primary-color), 10%);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: darken(var(--secondary-color), 10%);
+    border-color: darken(var(--secondary-color), 10%);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.btn-success:hover {
+    background-color: darken(var(--success-color), 10%);
+    border-color: darken(var(--success-color), 10%);
+}
+
+.btn-info {
+    background-color: var(--info-color);
+    border-color: var(--info-color);
+}
+
+.btn-info:hover {
+    background-color: darken(var(--info-color), 10%);
+    border-color: darken(var(--info-color), 10%);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
+.btn-danger:hover {
+    background-color: darken(var(--danger-color), 10%);
+    border-color: darken(var(--danger-color), 10%);
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0.5rem 0;
+    }
+
+    .btn {
+        width: 100%;
+        margin: 0.25rem 0 !important; /* Override Bootstrap's me-2 */
+    }
+
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    footer {
+        font-size: 0.85rem;
+    }
+}
+
+/* Subtle hover effects */
+a, .btn {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--info-color);
+}
+
+/* Ensure CSRF form stays hidden */
+#csrf-token-form {
+    display: none !important;
+}
+
+/* Navbar Toggler (Hamburger Menu) */
+.navbar-toggler {
+    border: none; /* Remove default border */
+    padding: 8px 10px;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Custom Toggler Icon (Animated Hamburger) */
+.navbar-toggler-icon {
+    width: 28px;
+    height: 3px;
+    background-color: #ffffff; /* White bars */
+    display: block;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Create the three bars */
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: "";
+    width: 28px;
+    height: 3px;
+    background-color: #ffffff; /* Same as main icon */
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Position the top and bottom bars */
+.navbar-toggler-icon::before {
+    top: -8px;
+}
+
+.navbar-toggler-icon::after {
+    top: 8px;
+}
+
+/* Navbar Toggler Hover Effect */
+.navbar-toggler:hover .navbar-toggler-icon,
+.navbar-toggler:hover .navbar-toggler-icon::before,
+.navbar-toggler:hover .navbar-toggler-icon::after {
+    background-color: #00aaff; /* Bright blue on hover */
+}
+
+/* Navbar Toggler Active State (Rotate into X) */
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background-color: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+    top: 0;
+}

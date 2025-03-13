@@ -1,0 +1,78 @@
+/* Profile & Submit Idea Container */
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa); /* Subtle gradient */
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Profile Section */
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Profile Picture */
+.profile-info img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 3px solid #007bff; /* Blue border for pop effect */
+    object-fit: cover;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-info img:hover {
+    transform: scale(1.1);
+}
+
+/* Username Styling */
+.profile-info .username {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a2a44;
+}
+
+/* Submit Button */
+.btn-submit {
+    background: #28c76f; /* Green Button */
+    color: white;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 3px 10px rgba(40, 167, 69, 0.3);
+}
+
+.btn-submit:hover {
+    background: #20a55a;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.5);
+}
+
+/* Responsive Fix: Stack items on smaller screens */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .profile-info {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn-submit {
+        margin-top: 12px;
+        width: 100%; /* Full-width button on small screens */
+    }
+}
