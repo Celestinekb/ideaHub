@@ -8,7 +8,7 @@
         <title>{% block title %}IdeasHub{% endblock %}</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
-        {% block extra_css %}{% endblock %} <!-- For page-specific CSS -->
+        {% block extra_css %}{% endblock %}
     </head>
 <body>
 
@@ -47,6 +47,15 @@
     <!-- Main Content -->
     <div class="container mt-4">
         {% block content %}{% endblock %}
+        
+        <!-- Back to Top Button -->
+        <div class="text-center my-4">
+            <button id="back-to-top" class="btn btn-outline-primary" title="Back to Top">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                </svg>
+            </button>
+        </div>
     </div>
 
     <!-- CSRF Token Form (Hidden) -->
@@ -54,12 +63,17 @@
         {% csrf_token %}
     </form>
 
-    <footer class="text-center py-3 bg-dark text-light mt-4">
-        <p>© 2025 Research Hub .celestinekb </p>
-    </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{% static 'js/script.js' %}"></script>
     <script src="{% static 'js/vote.js' %}"></script>
+    <script>
+        // JavaScript to handle smooth scrolling to top
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
